@@ -1,9 +1,8 @@
-//This program inserts the node at the beginning or the end of the linked list as per the requirement of the user.
 package com.company;
 
 import java.sql.SQLOutput;
 
-class Ll3{
+class Ll4{
     Node head;
     static  class Node{
         int data;
@@ -14,21 +13,14 @@ class Ll3{
         }
     }
 
-    void insertStart(int x){
-        Node temp=new Node(x);                 ;
-        temp.next=head;
-        head=temp;
-    }
-
-    void insertEnd(int x){
-        Node temp=new Node(x);
-        if(head==null){
-            head=temp;
+    void insertBetween(Node a,int x){
+        if(a==null){
+            System.out.println("The node cannot be null");
+            return;
         }
-        Node last=new Node(x);
-        while(last.next!=null)
-        last=last.next;
-        last.next=temp;
+        Node temp=new Node(x);                 ;
+        temp.next=a;
+        a=temp;
     }
 
     void printThis(){
@@ -40,12 +32,13 @@ class Ll3{
 
     }
     public static void main(String[] args) {
-	      Ll3 list=new Ll3();
-          list.insertEnd(10);
-          list.insertStart(20);
-          list.insertStart(30);
-          list.insertEnd(40);
-          list.printThis();
+        Ll4 list=new Ll4();
+        list.head=new Node(10);
+        Node second=new Node(20);
+        Node third=new Node(30);
+        list.head.next=second;
+        second.next=third;
+        list.insertBetween(second,10);
+        list.printThis();
     }
 }
-;
