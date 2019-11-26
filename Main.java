@@ -1,3 +1,4 @@
+//This program inserts the node at the beginning or the end of the linked list as per the requirement of the user.
 package com.company;
 
 import java.sql.SQLOutput;
