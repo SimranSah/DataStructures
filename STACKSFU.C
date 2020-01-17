@@ -18,7 +18,7 @@ void create(struct stack *st)
 void display(struct stack st)
 {
  int i;
- for(i=top-1;i>=0;i--)
+ for(i=st.top-1;i>=0;i--)
   printf("%d",st.S[i]);
  printf("\n");
 }
@@ -39,7 +39,7 @@ int pop(struct stack *st)
   if(st->top==-1)
    printf("The stack is empty ");
   else
-   x=st->S[st->top--]
+   x=st->S[st->top--];
    return x;
 }
 int peek(struct stack st,int pos)
